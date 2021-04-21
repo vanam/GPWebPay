@@ -81,8 +81,8 @@ abstract class GPWebPayTestCase extends TestCase
     /**
      * @param string $action
      * @param string $method
-     * @param array  $params
-     * @param array  $post
+     * @param mixed[]  $params
+     * @param mixed[]  $post
      * @return IResponse
      */
     protected function runPresenterAction(

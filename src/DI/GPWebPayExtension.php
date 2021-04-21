@@ -99,7 +99,7 @@ class GPWebPayExtension extends Nette\DI\CompilerExtension
      */
     public static function register(Configurator $configurator): void
     {
-        $configurator->onCompile[] = static function ($config, Compiler $compiler) {
+        $configurator->onCompile[] = static function ($config, Compiler $compiler): void {
             $compiler->addExtension('gpwebpay', new GPWebPayExtension());
         };
     }

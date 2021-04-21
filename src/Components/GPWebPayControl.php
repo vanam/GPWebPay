@@ -77,7 +77,7 @@ class GPWebPayControl extends UI\Control
     }
 
     /**
-     * @param array  $attrs
+     * @param mixed[]  $attrs
      * @param string $text
      *
      * @throws InvalidLinkException
@@ -87,9 +87,9 @@ class GPWebPayControl extends UI\Control
         /** @var Template $template */
         $template = $this->getTemplate();
         $template->setFile($this->getTemplateFilePath());
-        $template->add('checkoutLink', $this->link('//checkout!'));
-        $template->add('text', $text);
-        $template->add('attrs', $attrs);
+        $template->checkoutLink = $this->link('//checkout!');
+        $template->text = $text;
+        $template->attrs = $attrs;
         $template->render();
     }
 
@@ -98,7 +98,7 @@ class GPWebPayControl extends UI\Control
      */
     public function getTemplateFilePath(): string
     {
-        return $this->templateFile ?: $this->getDefaultTemplateFilePath();
+        return $this->templateFile !== null ? $this->templateFile : $this->getDefaultTemplateFilePath();
     }
 
     /**
