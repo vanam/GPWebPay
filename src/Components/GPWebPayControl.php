@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Pixidos\GPWebPay\Components;
 
@@ -98,7 +100,7 @@ class GPWebPayControl extends UI\Control
      */
     public function getTemplateFilePath(): string
     {
-        return $this->templateFile !== null ? $this->templateFile : $this->getDefaultTemplateFilePath();
+        return null !== $this->templateFile ? $this->templateFile : $this->getDefaultTemplateFilePath();
     }
 
     /**

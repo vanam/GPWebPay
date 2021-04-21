@@ -1,9 +1,6 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
- * Test:  Pixidos\GPWebPay\Components\GPWebPayControl
- * @testCase GPWebPay\Tests\Components\GPWebPayControlTest
- */
+declare(strict_types=1);
 
 namespace GPWebPay\Tests\Components;
 
@@ -14,14 +11,19 @@ use Pixidos\GPWebPay\Components\GPWebPayControl;
 use Pixidos\GPWebPay\Data\RequestInterface;
 use Tester\Assert;
 
+require_once __DIR__ . '/../bootstrap.php';
+
+/**
+ * Test:  Pixidos\GPWebPay\Components\GPWebPayControl
+ * @testCase GPWebPay\Tests\Components\GPWebPayControlTest
+ */
+
+
 /**
  * Class GPWebPayControlTest
  * @package GPWebPay\Tests\Components
  * @author  Ondra Votava <ondra@votava.dev>
  */
-
-require_once __DIR__ . '/../bootstrap.php';
-
 class GPWebPayControlTest extends GPWebPayTestCase
 {
 
@@ -89,7 +91,6 @@ class GPWebPayControlTest extends GPWebPayTestCase
 
         return $control;
     }
-
 }
 
 (new GPWebPayControlTest())->run();

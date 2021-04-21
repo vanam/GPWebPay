@@ -1,9 +1,6 @@
-<?php declare(strict_types=1);
+<?php
 
-/**
- * Test: Pixidos\GPWebPay\DI\GPWebPayExtension
- * @testCase GPWebPay\Tests\DI\GPWebPayExtensionTest
- */
+declare(strict_types=1);
 
 namespace GPWebPay\Tests\DI;
 
@@ -23,6 +20,11 @@ use Tester\Assert;
 
 require_once __DIR__ . '/../bootstrap.php';
 
+
+/**
+ * Test: Pixidos\GPWebPay\DI\GPWebPayExtension
+ * @testCase GPWebPay\Tests\DI\GPWebPayExtensionTest
+ */
 class GPWebPayExtensionTest extends GPWebPayTestCase
 {
 
@@ -41,7 +43,6 @@ class GPWebPayExtensionTest extends GPWebPayTestCase
         Assert::type(SignerProvider::class, $container->getByType(SignerProviderInterface::class));
         Assert::type(SignerFactoryInterface::class, $container->getByType(SignerFactoryInterface::class));
         Assert::type(GPWebPayControlFactory::class, $container->getByType(GPWebPayControlFactory::class));
-
     }
 
 
@@ -67,7 +68,6 @@ class GPWebPayExtensionTest extends GPWebPayTestCase
         Assert::same('123456789', (string)$paymentConfig->getMerchantNumber('czk'));
         Assert::same('123456780', (string)$paymentConfig->getMerchantNumber('eur'));
     }
-
 }
 
 $test = new GPWebPayExtensionTest();
