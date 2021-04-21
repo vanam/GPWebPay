@@ -4,10 +4,9 @@ includes:
     - vendor/phpstan/phpstan-nette/rules.neon
 
 parameters:
-    autoload_files:
-        - vendor/autoload.php
     excludes_analyse:
         - tests/bootstrap.php
+        - vendor/
     paths:
         - src
         - tests
